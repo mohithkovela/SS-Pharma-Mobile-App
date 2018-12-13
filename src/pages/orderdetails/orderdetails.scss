@@ -1,0 +1,15 @@
+page-orderdetails {
+    .toolbar-background-md{
+        background: #fff;
+    }
+    .backarrow{
+      position: absolute;
+      z-index: 9999;
+      left: 10px;
+      top: 11px;
+      color: #333;  
+      font-size: 26px;
+      cursor: pointer;
+      
+    }
+}

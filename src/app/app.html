@@ -1,0 +1,24 @@
+
+<ion-menu [content]="mycontent">
+    <ion-content>
+            <ion-list>
+                    <ion-item  detail-none>Profile</ion-item>
+                  </ion-list>
+      <ion-list>
+        <ion-item menuClose  detail-none (click)="loginpage()">Login In</ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item menuClose detail-none (click)="orderlist()">Your Order List</ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item menuClose detail-none (click)="hosptallist()">Hosptal List</ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item menuClose detail-none (click)="rmpdoctor()">RMP Doctor's  List</ion-item>
+      </ion-list>
+       
+    </ion-content>
+  </ion-menu>
+  
+  <ion-nav [root]="rootPage" #mycontent></ion-nav>

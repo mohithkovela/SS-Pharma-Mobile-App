@@ -1,0 +1,25 @@
+page-orderlist {
+.Delivered{
+    border-radius: 3px;
+    color: #fff;
+    background-color: #488aff;
+    font-weight: 100;
+}
+.Rejected{
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ff4863;font-weight: 100;
+}
+.Pending{
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ff7f00;font-weight: 100;
+}
+.item-md ion-thumbnail ion-img, .item-md ion-thumbnail img{
+    border: 1px solid #ccc;
+}
+.arrow{
+    font-size: 20px;
+    color: #333;
+}
+}

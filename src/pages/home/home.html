@@ -1,0 +1,21 @@
+<ion-content class="bg">
+    <div class="headercls">
+            <img alt="logo"  class="logo"   src="../../assets/imgs/logo_new.png" > 
+            <ion-icon name="menu" class="pull-right" menuToggle ></ion-icon>
+    </div>
+
+    <img src="../../assets/imgs/uploadbutton.png" class="uploadbtn animated bounceInDown"  (click)="uploadclick()">
+
+    <div class="transparent-bg"  (click)="camhide()"  *ngIf = "showDiv"> </div>
+
+       <div class="camarabg" *ngIf = "showDiv">
+     <img src="../../assets/imgs/gallery.png" class="gallery-icon" (click)="uploadpic()">
+
+                <img src="../../assets/imgs/cam.png" class="cam-icon" (click)="takePicture()">
+       </div>
+   
+      
+       
+ 
+        
+</ion-content>

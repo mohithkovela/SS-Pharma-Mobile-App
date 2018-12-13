@@ -1,0 +1,50 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+ 
+ 
+
+<ion-content>
+    <div class="login_bg">
+        <ion-icon name="arrow-round-back" class="backarrow" (click)="backscreen()"></ion-icon>
+  
+      
+                   
+  <img src="../../assets/imgs/logo2.png" class="logo2">
+  <ion-item>
+      <ion-label color="primary" floating> Name</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Phone Number</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select [(ngModel)]="gender">
+            <ion-option value="f">Female</ion-option>
+            <ion-option value="m">Male</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date Of Birth</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>User Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary"  floating>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <a href="#" class="forgotcls">Forgot Password</a>
+      <button ion-button round outline class="login-btn">Sgin Up</button>
+      <div class="reg" (click)='home()'>  <ion-icon name="home" class="homecls"></ion-icon> </div>
+    </div>
+  
+  </ion-content>
+  
