@@ -1,15 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { OrderdetailsPage } from "../orderdetails/orderdetails";
-import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-
-/**
- * Generated class for the OrderlistPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HttpProvider } from "../../providers/http/http";
 
 @IonicPage()
 @Component({
@@ -21,22 +14,22 @@ export class OrderlistPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public http: HttpClient
+    public http: HttpProvider
   ) {
     this.loadData();
   }
 
   loadData() {
-    let data: Observable<any>;
-    data = this.http.get("assets/json/data.json");
-    data.subscribe(result => {
-      this.items = result;
+    this.http.getOrders().subscribe(response => {
+      console.log(response);
+      this.items = response.orders
     });
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad OrderlistPage");
   }
+
   orddetails(item): void {
     this.navCtrl.push(OrderdetailsPage, item);
 

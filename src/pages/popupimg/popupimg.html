@@ -1,34 +1,27 @@
- 
+<ion-content class="bg">
+  <div class="headercls">
+    <img alt="logo" class="logo" src="../../assets/imgs/logo_new.png">
+  </div>
 
-<ion-content  class="bg">
-    <div class="headercls">
-        <img alt="logo"  class="logo"   src="../../assets/imgs/logo_new.png" > 
-</div>
- 
-<div class="inner">
+  <div class="inner">
 
-  <img [src]="img"  width="100" />
+    <img [src]="img" width="100" />
 
+    <ion-item>
+      <ion-label floating>Enter Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label floating>Contact Number</ion-label>
+      <ion-input type="number" [(ngModel)]="price"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label floating>Enter Name</ion-label>
-        <ion-input type="text" ></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label floating>Contact Number</ion-label>
-        <ion-input type="number"  ></ion-input>
-      </ion-item>
-    
-   
-  
-</div>
+  </div>
 </ion-content>
 <ion-footer>
- 
-        <button ion-button color="light" (click)="Cancelclk()" class="Cancelcls">Cancel</button>
-        <button ion-button color="secondary"   class="Submitcls" (click)="success()">Upload</button>
-   
-  </ion-footer>
- 
+
+  <button ion-button color="light" (click)="Cancelclk()" class="Cancelcls">Cancel</button>
+  <button ion-button color="secondary" class="Submitcls" (click)="success()">Upload</button>
+
+</ion-footer>
