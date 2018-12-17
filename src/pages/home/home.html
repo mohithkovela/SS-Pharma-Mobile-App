@@ -10,12 +10,8 @@
 
   <div class="camarabg" *ngIf="showDiv">
     <img src="../../assets/imgs/gallery.png" class="gallery-icon" (click)="uploadpic()">
+    <input type="file" (change)="uploadImage($event)" />
 
     <img src="../../assets/imgs/cam.png" class="cam-icon" (click)="takePicture()">
   </div>
-
-
-
-
-
 </ion-content>

@@ -20,6 +20,7 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpClientModule} from '@angular/common/http';
+import { HttpProvider } from '../providers/http/http';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { HttpClientModule} from '@angular/common/http';
     StatusBar,
     SplashScreen,
     Camera, 
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpProvider
   ]
 })
 export class AppModule {}

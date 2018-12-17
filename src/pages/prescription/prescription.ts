@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the PrescriptionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-prescription',
@@ -21,8 +14,7 @@ export class PrescriptionPage {
   }
 
   ionViewDidLoad() {
-    this.image = this.navParams.data.img;
-     
+    this.image = 'http://192.168.2.23:3000/' + this.navParams.data.image;
     console.log(this.navParams.data);
   }
 

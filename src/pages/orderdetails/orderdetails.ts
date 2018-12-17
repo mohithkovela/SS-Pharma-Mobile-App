@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PrescriptionPage} from '../../pages/prescription/prescription';
 import { BillPage} from '../../pages/bill/bill';
 
-/**
- * Generated class for the OrderdetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
