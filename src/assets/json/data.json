@@ -4,27 +4,31 @@
     "img":"https://www.drbeen.com/wp-content/uploads/2016/05/drbeen-sample-prescription-02.jpg",
     "title": "Person Name",
     "status": "Delivered",
-    "date": "10-Jan-2018"
+    "date": "10-Jan-2018",
+    "bill": "https://cdn-images-1.medium.com/max/1600/1*MpSlUJoxPjb9jk6PG525vA.jpeg"
   },
   {
     "id": 2,
     "img":"https://drbeeneducation.files.wordpress.com/2016/05/drbeen-sample-prescription-copy-3.jpg",
     "title": "Person Name",
     "status": "Pending",
-    "date": "13-July-2018"
+    "date": "13-July-2018",
+    "bill": "https://c8.alamy.com/comp/CP3X6B/medicine-dentistry-dental-bill-dentist-anton-stadler-peiting-2051962-CP3X6B.jpg"
   },
   {
     "id": 3,
     "img":"https://www.novasom.com/wp-content/uploads/notepad.png",
     "title": "Person Name",
     "status": "Rejected ",
-    "date": "20-Feb-2018"
+    "date": "20-Feb-2018",
+    "bill": "http://i.imgur.com/HQD6EFC.jpg"
   },
   {
     "id": 4,
     "img":"http://2.bp.blogspot.com/-AfqTEwYcUDs/TxVzLdSNKUI/AAAAAAAAADI/FsfUFOiyYBM/s1600/yellow+prescription4.JPG",
     "title": "Person Name",
     "status": "Delivered",
-    "date": "19-Jan-2018"
+    "date": "19-Jan-2018",
+    "bill": "https://invoicetemplates.com/wp-content/uploads/medical-bill-invoice-template-adobe-pdf-microsoft-word.jpg"
   } 
 ]

@@ -15,12 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PrescriptionPage {
   image: any;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.image = this.navParams.data.img;
+     
     console.log(this.navParams.data);
   }
 

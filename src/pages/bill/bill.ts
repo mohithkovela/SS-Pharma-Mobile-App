@@ -14,7 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'bill.html',
 })
 export class BillPage {
-  status: any;
+  
+  bile: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -22,7 +23,7 @@ export class BillPage {
 
 
   ionViewDidLoad() {
-    this.status = this.navParams.data.status;
+    this.bile = this.navParams.data.bill;
     console.log('ionViewDidLoad BillPage');
   }
 

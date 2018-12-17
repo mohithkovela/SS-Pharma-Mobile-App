@@ -15,6 +15,7 @@ import { OrderdetailsPage } from '../pages/orderdetails/orderdetails'
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import {BillPage} from '../pages/bill/bill';
 import { PrescriptionPage} from '../pages/prescription/prescription'
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -39,7 +40,8 @@ import { HttpClientModule} from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    SuperTabsModule.forRoot()
+    SuperTabsModule.forRoot(),
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
