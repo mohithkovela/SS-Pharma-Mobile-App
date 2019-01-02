@@ -6,6 +6,7 @@
     "city": "Hyderabad",
     "address": "Patrika Nagar Behind Cyber Towers In the Lane of IBIS Hotels Madhapur HITEC City",
     "timeing": "Open 24 hours",
-    "phone": "040 4940 4940"
+    "phone": "040 4940 4940",
+    "doctors": [{"name": "Praveen", "Dept": "Ortho", "Mobile": "987654345"}]
   } 
 ]
