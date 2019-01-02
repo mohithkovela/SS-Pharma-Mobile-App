@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { OrderdetailsPage } from "../orderdetails/orderdetails";
 import { Observable } from "rxjs/Observable";
 import { HttpProvider } from "../../providers/http/http";
+import { environment } from "../../environments/environment";
 
 @IonicPage()
 @Component({
@@ -11,6 +12,7 @@ import { HttpProvider } from "../../providers/http/http";
 })
 export class OrderlistPage {
   public items: any;
+  private url = environment.url
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
