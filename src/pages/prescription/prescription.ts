@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { environment } from "../../environments/environment";
 
 @IonicPage()
 @Component({
@@ -14,7 +15,7 @@ export class PrescriptionPage {
   }
 
   ionViewDidLoad() {
-    this.image = 'http://192.168.2.23:3000/' + this.navParams.data.image;
+    this.image = environment.url + this.navParams.data.image;
     console.log(this.navParams.data);
   }
 
