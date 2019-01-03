@@ -2,58 +2,50 @@ import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
 import { Camera } from "@ionic-native/camera";
 import { PopupimgPage } from "../popupimg/popupimg";
-import { HttpProvider } from "../../providers/http/http";
+import { File } from "@ionic-native/file";
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
 })
 export class HomePage {
-  showDiv: boolean;
-  public base64Image: string;
+  showDiv: boolean = false;
+  selectedImage: File;
   constructor(
     public navCtrl: NavController,
     private camera: Camera,
-    private http: HttpProvider
+    private file: File
   ) {}
+
   takePicture() {
     this.camera
       .getPicture({
         sourceType: this.camera.PictureSourceType.CAMERA,
-        destinationType: this.camera.DestinationType.DATA_URL,
+        destinationType: this.camera.DestinationType.FILE_URI,
         targetWidth: 500,
         targetHeight: 500
       })
       .then(
         imageData => {
-          // imageData is a base64 encoded string
-          this.base64Image = "data:image/jpeg;base64," + imageData;
-          this.navCtrl.push(PopupimgPage, {
-            data: this.base64Image
-          });
-          this.showDiv = false;
+          this.uploadImage(imageData);
         },
         err => {
           console.log(err);
         }
-      );
+      )
+      .catch(error => {
+        console.log(error);
+      });
   }
-  uploadpic() {
+
+  readPicFromFileSystem() {
     this.camera
       .getPicture({
         sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-        destinationType: this.camera.DestinationType.DATA_URL,
-        targetWidth: 1000,
-        targetHeight: 1000
+        destinationType: this.camera.DestinationType.FILE_URI
       })
       .then(
         imageData => {
-          console.log(imageData)
-          // imageData is a base64 encoded string
-          this.base64Image = "data:image/jpeg;base64," + imageData;
-          this.navCtrl.push(PopupimgPage, {
-            data: this.base64Image
-          });
-          this.showDiv = false;
+          this.uploadImage(imageData);
         },
         err => {
           console.log(err);
@@ -61,24 +53,35 @@ export class HomePage {
       );
   }
 
-  ionViewWillEnter() {
-    this.showDiv = false;
-  }
-
-  uploadclick() {
+  uploadClick() {
     this.showDiv = true;
   }
 
-  camhide() {
-    //alert();
+  uploadImage(imageData) {
+    this.file.resolveLocalFilesystemUrl(imageData).then((fileEntry: any) => {
+      fileEntry.file(file => {
+        this.readFile(file);
+      });
+    });
     this.showDiv = false;
   }
 
-  uploadImage(event) {
-    this.navCtrl.push(PopupimgPage, {
-      data: event.target.files[0]
-    });
+  private readFile(file: any) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const formData = new FormData();
+      const imgBlob = new Blob([reader.result], { type: file.type });
+      let fileData = {
+        blob: imgBlob,
+        file: file
+      };
+      this.navCtrl.push(PopupimgPage, fileData);
+      this.showDiv = false;
+    };
+    reader.readAsArrayBuffer(file);
+  }
+
+  hideCamera() {
     this.showDiv = false;
-    // this.http.uploadImage(event.target.files[0]);
   }
 }

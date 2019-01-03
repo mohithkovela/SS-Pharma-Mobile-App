@@ -1,16 +1,15 @@
 <ion-content class="bg">
-  <div class="headercls">
+  <div class="header-cls">
     <img alt="logo" class="logo" src="../../assets/imgs/logo_new.png">
     <ion-icon name="menu" class="pull-right" menuToggle></ion-icon>
   </div>
 
-  <img src="../../assets/imgs/uploadbutton.png" class="uploadbtn animated bounceInDown" (click)="uploadclick()">
+  <img src="../../assets/imgs/uploadbutton.png" class="upload-btn animated bounceInDown" (click)="uploadClick()">
 
-  <div class="transparent-bg" (click)="camhide()" *ngIf="showDiv"> </div>
+  <div class="transparent-bg" (click)="hideCamera()" *ngIf="showDiv"> </div>
 
-  <div class="camarabg" *ngIf="showDiv">
-    <img src="../../assets/imgs/gallery.png" class="gallery-icon" (click)="uploadpic()">
-    <input type="file" (change)="uploadImage($event)" />
+  <div class="camera-bg" *ngIf="showDiv">
+    <img src="../../assets/imgs/gallery.png" class="gallery-icon" (click)="readPicFromFileSystem()">
 
     <img src="../../assets/imgs/cam.png" class="cam-icon" (click)="takePicture()">
   </div>

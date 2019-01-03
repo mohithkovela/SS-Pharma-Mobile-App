@@ -9,7 +9,8 @@ import { HttpProvider } from "../../providers/http/http";
   templateUrl: "popupimg.html"
 })
 export class PopupimgPage {
-  img: any;
+  imageBlob: any;
+  imageFile: any;
   name: any;
   price: any;
 
@@ -18,24 +19,30 @@ export class PopupimgPage {
     public navParams: NavParams,
     private http: HttpProvider
   ) {
-    this.img = navParams.get("data");
-    console.log(this.img);
+    let navData = this.navParams.data;
+    this.imageBlob = navData.blob;
+    this.imageFile = navData.file;
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad PopupimgPage");
   }
 
-  Cancelclk() {
+  cancel() {
     this.navCtrl.pop();
   }
 
-  success() {
+  submit() {
     this.http
-      .placeOrder(this.name, this.price, this.img)
-      .subscribe(response => {
-        console.log(response);
-        this.navCtrl.push(SuccessPage, {});
-      });
+      .placeOrder(this.name, this.price, this.imageBlob, this.imageFile.name)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.navCtrl.push(SuccessPage, {});
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 }
